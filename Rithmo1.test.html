@@ -108,8 +108,8 @@
                         evented: false,
                         left: 0,
                         top: 0,
-                        scaleX: CANVAS_WIDTH.9 / boardImage.width,
-                        scaleY: CANVAS_HEIGHT.9 / boardImage.height
+                        scaleX: CANVAS_WIDTH*.9 / boardImage.width,
+                        scaleY: CANVAS_HEIGHT*.9 / boardImage.height
                     });
                     canvas.insertAt(boardImage, 0);
                     resolve(boardImage);
