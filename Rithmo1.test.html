@@ -79,13 +79,13 @@
 
         const GRID_WIDTH = 896
         const GRID_HEIGHT = GRID_WIDTH/2
-        const OFFSET_HEIGHT = 16
-        const OFFSET_WIDTH = 65
+        const OFFSET_HEIGHT = 35 
+        const OFFSET_WIDTH = 67
         const CANVAS_WIDTH = GRID_WIDTH + OFFSET_WIDTH;
         const CANVAS_HEIGHT = GRID_HEIGHT + OFFSET_HEIGHT;
-        const SQ = GRID_HEIGHT / 10
+        const SQ = GRID_HEIGHT/8
         const HORIZ_BUFF = SQ / 2 + OFFSET_HEIGHT
-        const VERT_BUFF = SQ / 2 + OFFSET_WIDTH
+        const VERT_BUFF = SQ / 2 + OFFSET_WIDTH/2
         
         // Initialize canvas with proper dimensions
         const canvas = new fabric.Canvas('gameCanvas', {
