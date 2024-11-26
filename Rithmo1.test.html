@@ -77,8 +77,8 @@
 
     <script>
 
-        const GRID_WIDTH = 860
-        const GRID_HEIGHT = 464
+        const GRID_WIDTH = 896
+        const GRID_HEIGHT = GRID_WIDTH/2
         const OFFSET_HEIGHT = 16
         const OFFSET_WIDTH = 65
         const CANVAS_WIDTH = GRID_WIDTH + OFFSET_WIDTH;
@@ -150,8 +150,8 @@
                         top: 0,
                         originX: 'center',
                         originY: 'center',
-                        scaleX: SQ_WIDTH*.9 / img.width,
-                        scaleY: SQ_HEIGHT*.9 / img.height,
+                        scaleX: SQ_WIDTH / img.width,
+                        scaleY: SQ_HEIGHT / img.height,
                         hasControls: false,
                         hasBorders: false,
                         selectable: true,
