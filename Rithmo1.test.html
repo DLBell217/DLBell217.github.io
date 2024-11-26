@@ -83,9 +83,8 @@
         const OFFSET_WIDTH = 65
         const CANVAS_WIDTH = GRID_WIDTH + OFFSET_WIDTH;
         const CANVAS_HEIGHT = GRID_HEIGHT + OFFSET_HEIGHT;
-        const SQ_HEIGHT = GRID_HEIGHT / 8
-        const SQ_WIDTH = GRID_WIDTH / 16
-        const HORIZ_BUFF = SQ_HEIGHT / 2 + OFFSET_HEIGHT
+        const SQ = GRID_HEIGHT / 8
+        const HORIZ_BUFF = SQ / 2 + OFFSET_HEIGHT
         
         // Initialize canvas with proper dimensions
         const canvas = new fabric.Canvas('gameCanvas', {
@@ -108,8 +107,8 @@
                         evented: false,
                         left: 0,
                         top: 0,
-                        scaleX: CANVAS_WIDTH*.9 / boardImage.width,
-                        scaleY: CANVAS_HEIGHT*.9 / boardImage.height
+                        scaleX: CANVAS_WIDTH / boardImage.width,
+                        scaleY: CANVAS_HEIGHT / boardImage.height
                     });
                     canvas.insertAt(boardImage, 0);
                     resolve(boardImage);
@@ -150,8 +149,8 @@
                         top: 0,
                         originX: 'center',
                         originY: 'center',
-                        scaleX: SQ_WIDTH / img.width,
-                        scaleY: SQ_HEIGHT / img.height,
+                        scaleX: SQ*0.9 / img.width,
+                        scaleY: SQ*0.9 / img.height,
                         hasControls: false,
                         hasBorders: false,
                         selectable: true,
@@ -191,8 +190,8 @@
                             const piecePromise = loadPieceImage(piece).then(pieceObject => {
                                 // Position the piece
                                 pieceObject.set({
-                                    left: colIndex * SQ_HEIGHT + HORIZ_BUFF,
-                                    top: rowIndex * SQ_WIDTH + SQ_WIDTH / 2 + 20
+                                    left: colIndex * SQ + HORIZ_BUFF,
+                                    top: rowIndex * SQ + SQ / 2 + 20
                                 });
             
                                 boardState[rowIndex][colIndex] = pieceObject;
